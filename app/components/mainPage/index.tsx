@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { getMovies } from '@/app/utilities/getMovies';
 import { IMAGE_BASE_URL } from '@/app/config';
+import Navbar from '../navbar';
 
 interface MovieProps {
   id: number;
@@ -20,6 +21,7 @@ function Movies() {
   }, []);
   return (
     <div>
+      <Navbar/>
       <div className='grid grid-cols-4 gap-4'>
         {movies?.map((item) => (
           <Link href={`/movie/${item.id}`} key={item.id}>
